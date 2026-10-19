@@ -34,15 +34,15 @@ $stmt->execute($params);
 $rows = $stmt->fetchAll();
 $statuses = lookup('opportunity_statuses');
 
-function status_class(string $s): string {
-    return match ($s) {
-        'فعال' => 'active',
-        'در حال پرورش' => 'nurture',
-        'متوقف موقت' => 'paused',
-        'بسته‌شده-موفق' => 'won',
-        'بسته‌شده-ناموفق' => 'lost',
-        default => '',
-    };
+function status_class($s) {
+    switch ($s) {
+        case 'فعال': return 'active';
+        case 'در حال پرورش': return 'nurture';
+        case 'متوقف موقت': return 'paused';
+        case 'بسته‌شده-موفق': return 'won';
+        case 'بسته‌شده-ناموفق': return 'lost';
+        default: return '';
+    }
 }
 
 require __DIR__ . '/includes/header.php';
@@ -89,7 +89,7 @@ require __DIR__ . '/includes/header.php';
                 <td><span class="badge <?= status_class($row['status']) ?>"><?= e($row['status']) ?></span></td>
                 <td><?= e($row['pipeline_stage']) ?></td>
                 <td><?= e(mb_strimwidth((string)$row['next_step'], 0, 50, '…')) ?></td>
-                <td><?= e($row['next_step_date']) ?></td>
+                <td><?= e(to_jalali($row['next_step_date'])) ?></td>
                 <td><?= e($row['responsible']) ?></td>
                 <td><a href="opportunity_form.php?id=<?= (int)$row['id'] ?>">ویرایش</a></td>
             </tr>

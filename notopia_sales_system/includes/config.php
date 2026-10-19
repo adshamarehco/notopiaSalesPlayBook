@@ -1,13 +1,15 @@
 <?php
+require_once __DIR__ . '/jdate.php';
+
 /**
  * تنظیمات اتصال به دیتابیس سیستم فروش نوتوپیا
  * این مقادیر را مطابق هاست خود تغییر دهید.
  */
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'notopia_sales');
-define('DB_USER', 'root');          // نام کاربری دیتابیس را اینجا بگذارید
-define('DB_PASS', '');              // رمز دیتابیس را اینجا بگذارید
+define('DB_NAME', 'mynoto_notopia_sales');
+define('DB_USER', 'mynoto_notopia_sales');
+define('DB_PASS', 'Mhd.123321');      // رمز دیتابیس را اینجا بگذارید
 define('DB_CHARSET', 'utf8mb4');
 
 // رمز ورود ساده سیستم (مرحله اول - تک‌کاربره)

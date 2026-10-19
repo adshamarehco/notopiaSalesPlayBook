@@ -28,19 +28,19 @@ $recent = $pdo->query("
 require __DIR__ . '/includes/header.php';
 ?>
 <h1>داشبورد</h1>
-<p class=\"muted\">خلاصه وضعیت سیستم فروش — بر اساس داده‌های ثبت‌شده</p>
+<p class="muted">خلاصه وضعیت سیستم فروش — بر اساس داده‌های ثبت‌شده</p>
 
-<div class=\"stats\" style=\"margin-bottom:20px;\">
-    <div class=\"stat\"><div class=\"num\"><?= $active ?></div><div class=\"label\">فرصت فعال</div></div>
-    <div class=\"stat\"><div class=\"num\"><?= $nurture ?></div><div class=\"label\">در حال پرورش</div></div>
-    <div class=\"stat\"><div class=\"num\"><?= $proposalsMonth ?></div><div class=\"label\">پیشنهاد این ماه</div></div>
-    <div class=\"stat\"><div class=\"num\"><?= $meetingsWeek ?></div><div class=\"label\">جلسه/نمایش ۷ روز</div></div>
+<div class="stats" style="margin-bottom:20px;">
+    <div class="stat"><div class="num"><?= $active ?></div><div class="label">فرصت فعال</div></div>
+    <div class="stat"><div class="num"><?= $nurture ?></div><div class="label">در حال پرورش</div></div>
+    <div class="stat"><div class="num"><?= $proposalsMonth ?></div><div class="label">پیشنهاد این ماه</div></div>
+    <div class="stat"><div class="num"><?= $meetingsWeek ?></div><div class="label">جلسه/نمایش ۷ روز</div></div>
 </div>
 
-<div class=\"card\">
+<div class="card">
     <h2>گام‌های بعدی عقب‌افتاده</h2>
     <?php if (!$overdue): ?>
-        <p class=\"muted\">موردی نیست.</p>
+        <p class="muted">موردی نیست.</p>
     <?php else: ?>
         <table>
             <thead>
@@ -55,10 +55,10 @@ require __DIR__ . '/includes/header.php';
             <tbody>
             <?php foreach ($overdue as $row): ?>
                 <tr>
-                    <td><a href=\"opportunity_form.php?id=<?= (int)$row['id'] ?>\"><?= e($row['code']) ?></a></td>
+                    <td><a href="opportunity_form.php?id=<?= (int)$row['id'] ?>"><?= e($row['code']) ?></a></td>
                     <td><?= e($row['organization']) ?></td>
                     <td><?= e($row['next_step']) ?></td>
-                    <td><?= e($row['next_step_date']) ?></td>
+                    <td><?= e(to_jalali($row['next_step_date'])) ?></td>
                     <td><?= e($row['responsible']) ?></td>
                 </tr>
             <?php endforeach; ?>
@@ -67,7 +67,7 @@ require __DIR__ . '/includes/header.php';
     <?php endif; ?>
 </div>
 
-<div class=\"card\">
+<div class="card">
     <h2>آخرین فرصت‌های به‌روزشده</h2>
     <table>
         <thead>
@@ -85,9 +85,9 @@ require __DIR__ . '/includes/header.php';
             <tr>
                 <td><?= e($row['code']) ?></td>
                 <td><?= e($row['organization']) ?></td>
-                <td><span class=\"badge\"><?= e($row['status']) ?></span></td>
+                <td><span class="badge"><?= e($row['status']) ?></span></td>
                 <td><?= e($row['pipeline_stage']) ?></td>
-                <td><?= e($row['next_step_date']) ?></td>
+                <td><?= e(to_jalali($row['next_step_date'])) ?></td>
                 <td><?= e($row['responsible']) ?></td>
             </tr>
         <?php endforeach; ?>
