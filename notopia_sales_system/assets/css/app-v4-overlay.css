@@ -1,0 +1,75 @@
+/* Notopia UI v4 overlay — load AFTER existing app.css
+   Safe polish layer. Full replacement app.css is in artifacts zip: notopia_ui_design_v4.zip
+*/
+
+/* Better focus visibility (a11y) */
+:focus-visible {
+  outline: 2px solid var(--color-primary, var(--primary));
+  outline-offset: 2px;
+}
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) { outline: none; }
+
+/* Press feedback — Apple-style instant response */
+.btn:active,
+.sidebar a.nav-link:active,
+.profile-btn:active {
+  transform: scale(0.98);
+  transition-duration: var(--dur-fast, 120ms);
+}
+
+/* Tighter, more consistent card padding */
+.card, .dash-card, .panel, .form-card, .table-wrap, .box,
+.main-panel, .content-card, .wl-card {
+  border-radius: var(--radius, 14px);
+}
+
+/* Table density — data-dense CRM */
+table.data, .table, .contacts-table, .us-table {
+  font-size: 13px;
+}
+table.data th, .table th, .contacts-table th, .us-table th {
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Form controls consistency */
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="password"], input[type="number"], input[type="search"],
+input[type="url"], select, textarea {
+  min-height: var(--input-h, 38px);
+  border-radius: var(--radius-sm, 10px);
+  border: 1px solid var(--border);
+  font-family: inherit;
+  font-size: 13.5px;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: rgba(13, 148, 136, 0.45);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+/* Page head hierarchy */
+.page-head h1 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar .nav-badge { animation: none !important; }
+  * { scroll-behavior: auto !important; }
+}
+
+@media (max-width: 768px) {
+  .sidebar a.nav-link,
+  .btn,
+  .menu-toggle {
+    min-height: 44px;
+  }
+}
