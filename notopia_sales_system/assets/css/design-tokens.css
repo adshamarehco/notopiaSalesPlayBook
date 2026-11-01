@@ -1,0 +1,165 @@
+/* ============================================================
+   Notopia Design Tokens v4
+   Primitive → Semantic → Component
+   ============================================================ */
+
+:root {
+  /* ---------- Primitive ---------- */
+  --p-teal-50:  #f0fdfa;
+  --p-teal-100: #ccfbf1;
+  --p-teal-200: #99f6e4;
+  --p-teal-300: #5eead4;
+  --p-teal-400: #2dd4bf;
+  --p-teal-500: #14b8a6;
+  --p-teal-600: #0d9488;
+  --p-teal-700: #0f766e;
+  --p-teal-800: #115e59;
+  --p-teal-900: #134e4a;
+
+  --p-slate-50:  #f8fafc;
+  --p-slate-100: #f1f5f9;
+  --p-slate-200: #e2e8f0;
+  --p-slate-300: #cbd5e1;
+  --p-slate-400: #94a3b8;
+  --p-slate-500: #64748b;
+  --p-slate-600: #475569;
+  --p-slate-700: #334155;
+  --p-slate-800: #1e293b;
+  --p-slate-900: #0f172a;
+
+  --p-rose-500:   #e11d48;
+  --p-rose-soft:  rgba(225, 29, 72, 0.10);
+  --p-amber-500:  #d97706;
+  --p-amber-soft: rgba(217, 119, 6, 0.12);
+  --p-blue-500:   #2563eb;
+  --p-blue-soft:  rgba(37, 99, 235, 0.10);
+  --p-emerald-500:#059669;
+  --p-emerald-soft: rgba(5, 150, 105, 0.12);
+
+  /* Spacing scale (Refactoring UI) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Type scale */
+  --text-xs:  11px;
+  --text-sm:  12px;
+  --text-md:  13px;
+  --text-base:14px;
+  --text-lg:  16px;
+  --text-xl:  18px;
+  --text-2xl: 20px;
+  --text-3xl: 24px;
+
+  /* Radius */
+  --r-xs: 6px;
+  --r-sm: 8px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 18px;
+  --r-full: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur: 180ms;
+  --dur-slow: 240ms;
+
+  /* ---------- Semantic ---------- */
+  --color-primary:        var(--p-teal-600);
+  --color-primary-hover:  var(--p-teal-700);
+  --color-primary-deep:   var(--p-teal-800);
+  --color-primary-soft:   rgba(13, 148, 136, 0.10);
+  --color-primary-soft-2: rgba(13, 148, 136, 0.16);
+  --color-primary-glow:   rgba(13, 148, 136, 0.22);
+
+  --color-bg:          #f4f6f8;
+  --color-bg-elevated: #f8fafb;
+  --color-surface:     #ffffff;
+  --color-text:        var(--p-slate-900);
+  --color-text-2:      var(--p-slate-700);
+  --color-muted:       var(--p-slate-500);
+  --color-muted-2:     var(--p-slate-400);
+  --color-border:      rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.12);
+  --color-border-soft: rgba(15, 23, 42, 0.05);
+
+  --color-danger:  var(--p-rose-500);
+  --color-danger-soft: var(--p-rose-soft);
+  --color-warning: var(--p-amber-500);
+  --color-warning-soft: var(--p-amber-soft);
+  --color-info:    var(--p-blue-500);
+  --color-info-soft: var(--p-blue-soft);
+  --color-success: var(--p-emerald-500);
+  --color-success-soft: var(--p-emerald-soft);
+
+  --elev-1: 0 1px 2px rgba(15, 23, 42, 0.04), 0 0 0 1px var(--color-border);
+  --elev-2: 0 4px 12px rgba(15, 23, 42, 0.05), 0 0 0 1px var(--color-border);
+  --elev-3: 0 12px 32px rgba(15, 23, 42, 0.08), 0 0 0 1px var(--color-border);
+  --elev-float: 0 16px 40px rgba(15, 23, 42, 0.12), 0 0 0 1px var(--color-border-strong);
+
+  --sidebar-w: 248px;
+  --topbar-h: 56px;
+
+  /* ---------- Component tokens ---------- */
+  --btn-h: 36px;
+  --btn-h-sm: 30px;
+  --btn-h-lg: 42px;
+  --input-h: 38px;
+  --nav-item-h: 36px;
+  --touch-min: 44px;
+
+  /* Legacy aliases — keep old class compatibility */
+  --primary: var(--color-primary);
+  --primary-dark: var(--color-primary-hover);
+  --primary-deeper: var(--color-primary-deep);
+  --primary-soft: var(--color-primary-soft);
+  --primary-soft-2: var(--color-primary-soft-2);
+  --primary-glow: var(--color-primary-glow);
+  --primary-mid: var(--p-teal-300);
+
+  --bg: var(--color-bg);
+  --bg-elevated: var(--color-bg-elevated);
+  --card: var(--color-surface);
+  --text: var(--color-text);
+  --text-2: var(--color-text-2);
+  --muted: var(--color-muted);
+  --muted-2: var(--color-muted-2);
+  --border: var(--color-border);
+  --border-strong: var(--color-border-strong);
+  --border-soft: var(--color-border-soft);
+
+  --danger: var(--color-danger);
+  --danger-soft: var(--color-danger-soft);
+  --warning: var(--color-warning);
+  --warning-soft: var(--color-warning-soft);
+  --info: var(--color-info);
+  --info-soft: var(--color-info-soft);
+  --success: var(--color-success);
+  --success-soft: var(--color-success-soft);
+
+  --radius: var(--r-lg);
+  --radius-sm: var(--r-md);
+  --radius-xs: var(--r-sm);
+  --radius-full: var(--r-full);
+
+  --ease: var(--ease-standard);
+  --shadow-sm: var(--elev-1);
+  --shadow: var(--elev-2);
+  --shadow-md: var(--elev-3);
+  --shadow-hover: var(--elev-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur: 1ms;
+    --dur-slow: 1ms;
+  }
+}
